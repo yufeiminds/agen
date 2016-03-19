@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# textgen documentation build configuration file, created by
+# agen documentation build configuration file, created by
 # sphinx-quickstart on Fri Aug 16 15:28:41 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -47,7 +47,7 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = u'textgen'
+project = u'agen'
 copyright = u'2016, Yufei Li <yufeiminds@gmail.com>'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -55,8 +55,8 @@ copyright = u'2016, Yufei Li <yufeiminds@gmail.com>'
 # built documents.
 #
 # The short X.Y version.
-import textgen
-version = textgen.__version__
+import agen
+version = agen.__version__
 # The full version, including alpha/beta/rc tags.
 release = version
 
@@ -108,8 +108,8 @@ html_theme = 'flask_small'
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    'index_logo': 'textgen.png',
-    'github_fork': 'yufeiminds/textgen'
+    'index_logo': 'agen.png',
+    'github_fork': 'yufeiminds/agen'
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -178,7 +178,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'textgendoc'
+htmlhelp_basename = 'agendoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -197,7 +197,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'textgen.tex', u'textgen Documentation',
+  ('index', 'agen.tex', u'agen Documentation',
    u'Yufei Li', 'manual'),
 ]
 
@@ -227,7 +227,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'textgen', u'textgen Documentation',
+    ('index', 'agen', u'agen Documentation',
      [u'Yufei Li'], 1)
 ]
 
@@ -241,8 +241,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'textgen', u'textgen Documentation',
-   u'Yufei Li', 'textgen', 'A very simple code generator.',
+  ('index', 'agen', u'agen Documentation',
+   u'Yufei Li', 'agen', 'A very simple code generator.',
    'Miscellaneous'),
 ]
 

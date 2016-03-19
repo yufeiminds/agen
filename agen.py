@@ -27,8 +27,8 @@ import subprocess
 
 # Initialize globals
 logging.basicConfig()
-logger = logging.getLogger('textgen')
-app_folder = click.get_app_dir("textgen", force_posix=True)
+logger = logging.getLogger('agen')
+app_folder = click.get_app_dir("agen", force_posix=True)
 
 
 class Coderes(object):
@@ -71,9 +71,9 @@ class AbsLoader(jinja2.loaders.BaseLoader):
         return source, path, lambda: mtime == os.path.getmtime(path)
 
 
-class textgenError(Exception):
+class agenError(Exception):
     """
-    textgen exception.
+    agen exception.
     """
     pass
 
@@ -231,7 +231,7 @@ class Path(object):
     @property
     def context(self):
         assert os.path.isdir(self.path)
-        conf = choice(self.path, ['textgen.json', 'textgen.yaml'])
+        conf = choice(self.path, ['agen.json', 'agen.yaml'])
         if not conf:
             return None
         return load_context(conf)
@@ -240,7 +240,7 @@ class Path(object):
 def _prompt_app_folder(folder):
     folder_prompt = "  see -> {tf}".format(tf=folder)
     click.secho("-" * (len(folder_prompt) + 2), fg='blue')
-    click.secho("  textgen Library", fg='blue')
+    click.secho("  agen Library", fg='blue')
     click.secho(folder_prompt, fg='blue')
     click.secho("-" * (len(folder_prompt) + 2), fg='blue')
 

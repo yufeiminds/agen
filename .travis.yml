@@ -7,7 +7,7 @@ python:
 - '3.5'
 install: pip install -U pytest pytest-cov .
 script:
-- py.test -s -v --cov=textgen
+- py.test -s -v --cov=agen
 before_install:
 - pip install codecov
 after_success:
@@ -20,5 +20,5 @@ deploy:
   on:
     tags: true
     distributions: sdist bdist_wheel
-    repo: yufeiminds/textgen
+    repo: yufeiminds/agen
   skip_cleanup: true

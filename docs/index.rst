@@ -10,9 +10,9 @@ Indices and tables
 API Guide
 ---------
 
-Here is the API reference for textgen.
+Here is the API reference for agen.
 
-.. module:: textgen
+.. module:: agen
 
 .. autofunction:: string_render
 .. autofunction:: render

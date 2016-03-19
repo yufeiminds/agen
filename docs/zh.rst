@@ -2,28 +2,28 @@
 
    <div class="indexwrapper">
     <h1>
-        Textgen
-        <a class="headerlink" href="#textgen" title="Permalink to this headline">¶</a>
+        Agen
+        <a class="headerlink" href="#agen" title="Permalink to this headline">¶</a>
     </h1>
    </div>
 
 一个极简的代码生成器，可以嵌进你自己的项目中。
 
-.. image:: https://img.shields.io/pypi/v/textgen.svg
-   :target: https://pypi.python.org/pypi/textgen/
+.. image:: https://img.shields.io/pypi/v/agen.svg
+   :target: https://pypi.python.org/pypi/agen/
    :alt: Latest Version
-.. image:: https://travis-ci.org/yufeiminds/textgen.svg?branch=master
-   :target: https://travis-ci.org/yufeiminds/textgen
+.. image:: https://travis-ci.org/yufeiminds/agen.svg?branch=master
+   :target: https://travis-ci.org/yufeiminds/agen
    :alt: Travis CI Status
-.. image:: https://codecov.io/github/yufeiminds/textgen/coverage.svg?branch=develop
-   :target: https://codecov.io/github/yufeiminds/textgen?branch=master
+.. image:: https://codecov.io/github/yufeiminds/agen/coverage.svg?branch=master
+   :target: https://codecov.io/github/yufeiminds/agen?branch=master
    :alt: Codecov Status
-.. image:: https://readthedocs.org/projects/textgen/badge/?version=latest
-   :target: http://textgen.readthedocs.org/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/agen/badge/?version=latest
+   :target: http://agen.readthedocs.org/en/latest/?badge=latest
    :alt: Doc Status
 
 -  自由软件: MIT license
--  English Documentation: https://textgen.readthedocs.com/en/
+-  English Documentation: https://agen.readthedocs.com/en/
 
 特性
 ----
@@ -34,13 +34,13 @@
 
 **无模版**
 
-*textgen*
+*agen*
 本身并不提供任何代码模版，只是提供一种能力，将代码模版化。如果需要使用已有的公开模版，请通过另一个优秀的开源库
 `Cookiecutter <https://github.com/audreyr/cookiecutter>`__ 。
 
 **为什么?**
 
-textgen 十分轻量级，可以在几分钟内完美集成到你自己的项目中。
+agen 十分轻量级，可以在几分钟内完美集成到你自己的项目中。
 
 我非常喜爱 `Cookiecutter <https://github.com/audreyr/cookiecutter>`__
 这个非常酷的项目，但它的绝大多数功能对我来说太重了。
@@ -52,30 +52,30 @@ textgen 十分轻量级，可以在几分钟内完美集成到你自己的项目
 
 ::
 
-    pip install textgen
+    pip install agen
 
 从源代码安装：
 
 .. code:: shell
 
-    clone https://github.com/yufeiminds/textgen.git
-    cd textgen
+    clone https://github.com/yufeiminds/agen.git
+    cd agen
     python setup.py install
 
 快速指南
 --------
 
-在 *textgen* 中，使用
+在 *agen* 中，使用
 `jinja2 <http://jinja.pocoo.org/docs/>`__ 作为模版引擎进行渲染，所以，任何
 `jinja2 <http://jinja.pocoo.org/docs/>`__
-模版的特性都可以在textgen中使用。
+模版的特性都可以在agen中使用。
 
 文件生成
 ~~~~~~~~
 
 .. code-block:: python
 
-    from textgen import (
+    from agen import (
         string_render,
         render,
         generate,
@@ -133,12 +133,12 @@ textgen 十分轻量级，可以在几分钟内完美集成到你自己的项目
 基本用法
 ~~~~~~~~
 
-*textgen*
+*agen*
 也实现了一个非常简单的命令行工具，用于快速渲染本地的模版，但只能用于\*NIX系统。
 
 ::
 
-    Usage: textgen [OPTIONS] [NAMES]...
+    Usage: agen [OPTIONS] [NAMES]...
 
     Options:
       -o, --out PATH      Output path or directory
@@ -146,15 +146,15 @@ textgen 十分轻量级，可以在几分钟内完美集成到你自己的项目
       -c, --context PATH  Path of context file
       --help              Show this message and exit.
 
-不带参数时，\ *textgen* 会搜索本地的模版目录，eg.
+不带参数时，\ *agen* 会搜索本地的模版目录，eg.
 在\*NIX系统上，这个目录通常是
 
 ::
 
-    $ textgen
+    $ agen
     --------------------------------------------
-      textgen Library
-      see -> /Users/yufeili/.textgen/templates
+      agen Library
+      see -> /Users/yufeili/.agen/templates
     --------------------------------------------
     directory   repo        single.txt
 
@@ -162,7 +162,7 @@ textgen 十分轻量级，可以在几分钟内完美集成到你自己的项目
 
 ::
 
-    $ textgen -s template_path -o ouput_path -c context.json
+    $ agen -s template_path -o ouput_path -c context.json
 
 当然，\ ``.yaml`` 文件也是可以作为 ``context``
 使用的。如果不提供\ ``out`` 选项，会有输入提示（默认为当前目录）。
@@ -177,7 +177,7 @@ textgen 十分轻量级，可以在几分钟内完美集成到你自己的项目
 
 ::
 
-    $ textgen -s single.txt -o output.txt -c context.json
+    $ agen -s single.txt -o output.txt -c context.json
 
 目录
 ^^^^
@@ -194,7 +194,7 @@ textgen 十分轻量级，可以在几分钟内完美集成到你自己的项目
 
 ::
 
-    $ textgen -s directory -o myapp -c context.json
+    $ agen -s directory -o myapp -c context.json
 
 这条命令会创建一个名字叫 ``myapp`` 的目录，将 ``directory``
 下所有的文件都递归地处理，同时按原来的结构输出到 ``myapp`` 中。
@@ -202,16 +202,16 @@ textgen 十分轻量级，可以在几分钟内完美集成到你自己的项目
 Repository
 ^^^^^^^^^^
 
-.. note:: textgen 并非是作为一个命令行工具来设计的，对于repository的命令行生成，建议使用更加优秀的开源工具 `Cookiecutter <https://github.com/audreyr/cookiecutter>`__
+.. note:: agen 并非是作为一个命令行工具来设计的，对于repository的命令行生成，建议使用更加优秀的开源工具 `Cookiecutter <https://github.com/audreyr/cookiecutter>`__
 
-如果一个目录里面有一个内部文件夹，同时还有一个 ``textgen.json`` 或者
-``textgen.yaml``\ ，那么会判定这个文件夹是一个\ ``Repo``\ ，
+如果一个目录里面有一个内部文件夹，同时还有一个 ``agen.json`` 或者
+``agen.yaml``\ ，那么会判定这个文件夹是一个\ ``Repo``\ ，
 
 ::
 
     repo
     ├── README.md
-    ├── textgen.json
+    ├── agen.json
     └── {{name}}
         ├── __init__.py
         └── {{name}}.py
@@ -220,12 +220,12 @@ Repository
 
 ::
 
-    $ textgen -s repo -o output -c context.json
+    $ agen -s repo -o output -c context.json
 
 -  这条命令会在 ``output``
    目录下建立一个与内部文件夹同名的文件夹，如果是文件夹的名字是模版字符串，会编译成标准字符串后再建立文件夹，其它的行为与标准目录相同。
 -  此时 *context* 路径不是必需的，如果不提供，会读取 **Repo** 源目录里的
-   ``textgen.[json|yaml]`` ，并提示用户交互式地输入。
+   ``agen.[json|yaml]`` ，并提示用户交互式地输入。
 
 示例
 ^^^^
@@ -247,8 +247,8 @@ Repository
 
 ::
 
-    $ textgen -s ~/.textgen/templates/single.txt
-    $ textgen single.txt
+    $ agen -s ~/.agen/templates/single.txt
+    $ agen single.txt
 
 关于
 ----

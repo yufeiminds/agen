@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 entry_points = {
     'console_scripts': [
-        'textgen=textgen:cli'
+        'agen=agen:cli'
     ]
 }
 
@@ -23,19 +23,19 @@ test_requirements = [
 ]
 
 setup(
-    name='textgen',
+    name='agen',
     version='0.1.1',
     description="A very simple code generator.",
     author="Yufei Li",
     author_email='yufeiminds@163.com',
-    url='https://github.com/yufeiminds/textgen',
-    py_modules=['textgen'],
+    url='https://github.com/yufeiminds/agen',
+    py_modules=['agen'],
     entry_points=entry_points,
     include_package_data=True,
     install_requires=requirements,
     license="MIT",
     zip_safe=False,
-    keywords='textgen',
+    keywords='agen',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
