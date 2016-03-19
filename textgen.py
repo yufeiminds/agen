@@ -1,6 +1,6 @@
 # coding=utf8
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 __author__ = 'Yufei Li <yufeiminds@163.com>'
 __all__ = [
     'string_render', 'render',

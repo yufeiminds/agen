@@ -1,24 +1,24 @@
 language: python
 python:
-  - "2.6"
-  - "2.7"
-  - "3.3"
-  - "3.4"
-  - "3.5"
+- '2.6'
+- '2.7'
+- '3.3'
+- '3.4'
+- '3.5'
 install: pip install -U pytest pytest-cov .
 script:
-    - py.test -s -v --cov=textgen
+- py.test -s -v --cov=textgen
 before_install:
 - pip install codecov
 after_success:
 - codecov
 deploy:
   provider: pypi
-  distributions: sdist bdist_wheel
   user: yufeiminds
   password:
-    secure: HLrITveCOogeisJIpPyf9RqTNX4fdwiEDN7yAQhZqI86gttrCcP0fmTvV6zWynfWDKRmkVhvC5+AIsn5Mwq9hfCuMG4xC92SKKoq0q1LgbzCf/GnDvQau51EeQfcvCJSXhsrE8ONfFbTtDMzVSYD82XlLTSR/zLXKfNBL8yg88wpgbprLs7Rtpfbj84WqhxQUkGupwReLYRrcYZvEQ6IaVGg8CBx/vBjOlddRTXmMrnFb7kfJCt2JFsIxvwdn5zQ2kv2CB3FgJNe+QYxzh78MqlNDiS+Pw4oWULsjGLWxbpd41LKqEbRs5g5BTlgADXQS9MeddJVWt3GICrD6ouzaobPIVB+tZ5P1oCMLdKMg+89IiKkhoC54Dus0TGWpXs8NFdAH5psqt7JzUTJUtL6QXflfiPK6lSDInODDEwqS4sftgr5M6y0jGSQJAngf2c5/oObomiRTgxjPKWGxcwht3Bm3aJT9k9pR71maZoDmgFK4DwapZxdRcQQJvUrod8FbswdOfhB+XtfB2uWMBrSlCGqtAwpzCUqmfcLWnXo1vm2SL4ZgF0JC6e3l6yP6OynGRJcv/lXCUFIZytYFIzrBHJDeEU6vc5qR9XQ5+JwOU1k+5x5h9zTKo08hUO933j6ff6cmXf6qlpT3lbUiioGbez2G1G1Me6gUED0T5c9eDU=
+    secure: faTGpM0NIte3bxmWowkA/CR0fBiaT0PYgIJywWs6iitwXfYEISZ0AEr/n5ibhsXWvLkFtnIQ+1a+s9WdC5hhajZJfABSh1rOvkzFmeJoNkcoragO7XEG8ODLwtezy2MfZFf7/NEa6cILra8D7pFbT1+uyF+nGWG4Yig8dGjAdHsfVDnhV9WD167jUJneikaM1SE054ONP5M6iUPv7hHSfVdi12DCq5Ej3uMWTZevZaqI6b6eVnwypwyB4NqE+eXlyjFQh8USkrRm6bWI0uz6LweePHQIrKxgtPsd0PeAdnZJK62eCYkyxKjrU44HEA8ZuVRQ6SHSGHl7A+CHtmp3SsgUnDaBHAjlVYAKfxyggY5OYHaiacQ/xT84GhLeEzhVd1yaPkWQULJtbSQAks92Cdyp6XGRB7H16Z/CFmK1pOXiDuF2DSB62EpzpsNQRIYZ8b9R8GYMWkZ40Bce10LaF+kadYefzdreliv6La4RC9wsEa9IgcSBYu/gdWNbqj3UfXa9BSMTpIEZFqrFv1R53Pb2bqIqzUGeAcg76ipEyYgpadpLdWlKD8IAQNK7+O29eE7lYOUQ32/WXzrtKvmNMpIJm7aMuuz0CwMtXINdVfzXp55D+d/16dmvf9NL1SUsV7O9r6h2FzWyRFj+DM+tPTulx70T9ZJdb7JeHmM1Zy4=
   on:
     tags: true
+    distributions: sdist bdist_wheel
     repo: yufeiminds/textgen
-    python: "2.7"
+  skip_cleanup: true

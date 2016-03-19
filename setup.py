@@ -24,7 +24,7 @@ test_requirements = [
 
 setup(
     name='textgen',
-    version='0.1.0',
+    version='0.1.1',
     description="A very simple code generator.",
     author="Yufei Li",
     author_email='yufeiminds@163.com',
