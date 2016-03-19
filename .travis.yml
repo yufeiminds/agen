@@ -1,38 +1,24 @@
-# Config file for automatic testing at travis-ci.org
-# This file will be regenerated if you run travis_pypi_setup.py
-
 language: python
-python: 3.5
-
-env:
-  - TOXENV=py35
-  - TOXENV=py34
-  - TOXENV=py33
-  - TOXENV=py27
-  - TOXENV=py26
-  - TOXENV=pypy
-
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U tox py.test
-
-# command to run tests, e.g. python setup.py test
-script: tox
-
+python:
+  - "2.6"
+  - "2.7"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+install: pip install -U pytest pytest-cov .
+script:
+    - py.test -s -v --cov=textgen
 before_install:
-      - pip install codecov
+- pip install codecov
 after_success:
-      - codecov
-
-# After you create the Github repo and add it to Travis, run the
-# travis_pypi_setup.py script to finish PyPI deployment setup
+- codecov
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
   user: yufeiminds
   password:
-    secure: PLEASE_REPLACE_ME
+    secure: HLrITveCOogeisJIpPyf9RqTNX4fdwiEDN7yAQhZqI86gttrCcP0fmTvV6zWynfWDKRmkVhvC5+AIsn5Mwq9hfCuMG4xC92SKKoq0q1LgbzCf/GnDvQau51EeQfcvCJSXhsrE8ONfFbTtDMzVSYD82XlLTSR/zLXKfNBL8yg88wpgbprLs7Rtpfbj84WqhxQUkGupwReLYRrcYZvEQ6IaVGg8CBx/vBjOlddRTXmMrnFb7kfJCt2JFsIxvwdn5zQ2kv2CB3FgJNe+QYxzh78MqlNDiS+Pw4oWULsjGLWxbpd41LKqEbRs5g5BTlgADXQS9MeddJVWt3GICrD6ouzaobPIVB+tZ5P1oCMLdKMg+89IiKkhoC54Dus0TGWpXs8NFdAH5psqt7JzUTJUtL6QXflfiPK6lSDInODDEwqS4sftgr5M6y0jGSQJAngf2c5/oObomiRTgxjPKWGxcwht3Bm3aJT9k9pR71maZoDmgFK4DwapZxdRcQQJvUrod8FbswdOfhB+XtfB2uWMBrSlCGqtAwpzCUqmfcLWnXo1vm2SL4ZgF0JC6e3l6yP6OynGRJcv/lXCUFIZytYFIzrBHJDeEU6vc5qR9XQ5+JwOU1k+5x5h9zTKo08hUO933j6ff6cmXf6qlpT3lbUiioGbez2G1G1Me6gUED0T5c9eDU=
   on:
     tags: true
     repo: yufeiminds/textgen
-    condition: $TOXENV == py27
-
+    python: "2.7"

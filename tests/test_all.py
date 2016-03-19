@@ -66,11 +66,11 @@ def test_repo(tmpdir):
 
 def test_path_checker():
     path = textgen.Path(single)
-    assert path.is_single
-    path = textgen.Path(repo)
-    assert path.is_repo
+    assert path.is_single == True
     path = textgen.Path(directory)
-    assert path.is_dir
+    assert path.is_dir == True
+    path = textgen.Path(repo)
+    assert path.is_repo == True
 
 
 def test_cli_single(tmpdir, runner):
